@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft Yahei";
+    font-size: 12;
+    height: 100%;
+    width: 100%;
+}
+
+/*图表容器*/
+#vizContainer {
+    margin-top: 30px;
+    margin-left: -30px;
+    margin-right: -30px;
+    height: 100%;
+    width: 100%;
+}
+
+line.invest {
+    stroke: pink;
+    stroke-width: 2;
+    stroke-opacity: .7;
+}
+
+line.owner {
+    stroke: green;
+    stroke-width: 2;
+    stroke-opacity: .7;
+}
+
+line.job {
+    stroke: lightsteelblue;
+    stroke-width: 2;
+    stroke-opacity: .7;
+    /*stroke-dasharray: 4,2;*/
+}
+
+line.relative {
+    stroke: orange;
+    stroke-width: 2;
+    stroke-opacity: .7;
+    /*stroke-dasharray: 2,4;*/
+}
+
+circle {
+    cursor: move;
+    /*fill: #EBC763;*/
+    /*stroke: #000;*/
+}
+
+text.legency {
+    font-size: 10px;
+    fill: #666;
+}
+
+circle.highRisk {
+    fill: none;
+    stroke: red;
+    stroke-width: 2;
+}
+
+circle.normalRisk {
+    fill: none;
+    stroke: orange;
+    stroke-width: 2;
+}
+
+circle.lowRisk {
+    fill: none;
+    stroke: green;
+    stroke-width: 2;
+}
+
+text.nodesText {
+    fill: #333;
+    opacity: .7;
+    font-size: 8px;
+}
+
+text.linetext {
+    fill: #333;
+    opacity: .7;
+    font-size: 8px;
+}
+
+/*鼠标经过高亮边，红色*/
+.edgeHighlight {
+    stroke: red;
+    fill: none;
+}
+/*鼠标提示框*/
+/****tooltip style****/
+div.mouseTooltip {
+    position: absolute;
+    /*width: 180px;*/
+    width: auto;
+    /*min-width: 100px;*/
+    height: auto;
+    padding: 10px;
+    font-family: 'Microsoft Yahei', SimHei, STHeiti, Arial, sans-serif;
+    font-size: 12px;
+    /*color: #666;*/
+    color: white;
+    text-align: center;
+    background-color: black;
+    /*background-color: white;*/
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+/********************/
+
+/****control panel style****/
+/*侧边栏*/
+.sidebar {
+    padding: 10px;
+}
+
+/*过滤面板容器*/
+#filterBoard {
+    -webkit-border-top-left-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #fefefe;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+    /*border-top: 1px solid #fff;
+    border-left: 1px solid #fff;*/
+    /*border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;*/
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/*用户提示*/
+#userHints {
+    font-size: 12px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/*过滤器面板标题*/
+#filterBoardTitle {
+    -webkit-border-top-left-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #ccc;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/*节点选择下拉列表*/
+#nodeTypeFilterOption {
+    margin: 5px;
+}
+
+/*节点选择下拉列表*/
+#nodeTypeFilterOption .form-control{
+    font-size: 12px;
+}
+
+/*关系过滤器容器*/
+#filter {
+    text-align: left;
+    margin-left: -35px;
+    margin-top: 15px;
+}
+
+/*多选框ul*/
+#checkboxes {
+    margin-left: 0;
+    list-style-type:none;
+    text-align: left;
+}
+
+/*关系选择多选框*/
+li.relationTypeCheckbox {
+    margin-left: 0;
+    display: inline;
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+/*筛选按钮*/
+#updateButtonContainer {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/*风险企业面板容器*/
+#accordion {
+    /*padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;*/
+    -webkit-border-top-left-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #fefefe;
+    padding-bottom: 5px;
+    /*border-top: 1px solid #fff;
+    border-left: 1px solid #fff;*/
+    /*border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;*/
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#accordion .panel {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#accordion .panel .panel-body {
+    padding: 0;
+}
+
+/*#collapseOne {
+    max-height: 200px;
+    overflow: scroll;
+}
+
+#collapseTwo {
+    max-height: 300px;
+    overflow: scroll;
+}
+
+#collapseThree {
+    max-height: 200px;
+    overflow: scroll;
+}*/
+
+#headingOne {
+    /*background-color: red;*/
+    /*opacity: .3;*/
+}
+
+#headingTwo {
+    /*background-color: orange;*/
+    /*opacity: .3;*/
+}
+
+#headingThree {
+    /*background-color: green;*/
+    /*opacity: .3;*/
+}
+
+
+#riskBoardTitle {
+    -webkit-border-top-left-radius: 7px;
+    border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #ddd;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/*单个风险企业面板标题*/
+h5.panel-title {
+    font-size: 12px;
+}
+
+table.riskinfo {
+    font-size: 12px;
+}
+
+span.nomarlRisk {
+    background-color: orange;
+}
+
+span.highRisk {
+    background-color: red;
+}
+
+span.lowRisk {
+    background-color: green;
+}
+/***************************/
